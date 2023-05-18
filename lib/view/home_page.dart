@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
       key: _scaffoldKey,
       appBar: AppBar(
         title: const Text('Home'),
-        backgroundColor: const Color(0xFF0E2334),
+        backgroundColor: const Color(0xFF173148),
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: _openDrawer, // Call the _openDrawer() method
