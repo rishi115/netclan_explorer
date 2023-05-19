@@ -5,7 +5,6 @@ import 'package:netclan_explorer/view/explore.dart';
 import 'package:netclan_explorer/view/otherscreen.dart';
 import 'package:netclan_explorer/view/refine.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -13,37 +12,72 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
   int selectedIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
+  }
 
   void _openDrawer() {
     _scaffoldKey.currentState!.openDrawer();
   }
+
   final List<Widget> screens = [
     RefineScreen(),
     const ExploreScreen(),
     const NetworkScreen(),
     const chatScreen(),
     const ContactScreen(),
-
-
-    // Add more screens for each tab as needed
   ];
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Column(
+          children: [
+            const Text('rishikesh devare'
+            ,style: TextStyle(fontSize: 10),),
+            Row(
+              children: [
+                Icon(Icons.location_on_outlined,
+                size: 8,),
+                Text('rishi',
+                style: TextStyle(
+
+                ),)
+              ],
+            )
+            ,
+          ],
+        ),
         backgroundColor: const Color(0xFF173148),
         leading: IconButton(
           icon: const Icon(Icons.menu),
-          onPressed: _openDrawer, // Call the _openDrawer() method
+          onPressed: _openDrawer,
         ),
+
       ),
       drawer: const AppDrawer(),
-      body: screens[selectedIndex],
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        child: screens[selectedIndex],
+      ),
       bottomNavigationBar: Container(
         height: 65,
         decoration: const BoxDecoration(
@@ -67,12 +101,17 @@ class _HomePageState extends State<HomePage> {
               GButton(icon: Icons.contact_page_outlined, text: 'Contacts', textStyle: TextStyle(fontSize: 12)),
             ],
             selectedIndex: selectedIndex,
-            onTabChange: (index) => setState(() => selectedIndex = index),
+            onTabChange: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+              _animationController.reverse().then((_) {
+                _animationController.forward();
+              });
+            },
           ),
         ),
       ),
-
-
     );
   }
 }
