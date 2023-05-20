@@ -25,13 +25,13 @@ class _NetworkScreenState extends State<NetworkScreen> {
         child: ListView(
           controller: _scrollController,
           children: [
-            SizedBox(height: 9),
+            SizedBox(height: 8),
             Row(
               children: [
                 SizedBox(width: 30),
                 Expanded(
                   child: Container(
-                    height: 36,
+                    height: 35,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black, width: 0.5),
                       borderRadius: BorderRadius.circular(25),
@@ -65,9 +65,9 @@ class _NetworkScreenState extends State<NetworkScreen> {
                 SizedBox(width: 14),
               ],
             ),
-            SizedBox(height: 2),
+
             UserProfileWidget(
-              name: 'Rishi ',
+              name: 'Rishikesh ',
               status: 'Navi Mumbai',
               aboutText: 'HI Community i am new to netclan.',
               profileImageUrl: 'https://tse1.mm.bing.net/th?id=OIP.WQvPJdjEpvh8OTXB-NBfJwHaHw&pid=Api&P=0&h=180',

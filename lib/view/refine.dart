@@ -10,7 +10,7 @@ class Option {
 }
 
 class RefineScreen extends StatefulWidget {
-  RefineScreen({Key? key}) : super(key: key);
+  const RefineScreen({Key? key}) : super(key: key);
 
   @override
   _RefineScreenState createState() => _RefineScreenState();
@@ -51,11 +51,11 @@ class _RefineScreenState extends State<RefineScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 2,width: 19,),
+              const SizedBox(height: 2,width: 19,),
                Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  children: [
+                  children: const [
                     SizedBox(width: 4,),
                     Text(
                       'Select Your Availability',
@@ -67,7 +67,7 @@ class _RefineScreenState extends State<RefineScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 4),
+              const SizedBox(height: 4),
               Stack(
                 children: [
                   Container(
@@ -90,7 +90,7 @@ class _RefineScreenState extends State<RefineScreen> {
                           selectedOption = value;
                         });
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         contentPadding: EdgeInsets.zero,
                         border: InputBorder.none,
                       ),
@@ -110,23 +110,23 @@ class _RefineScreenState extends State<RefineScreen> {
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.3),
                               blurRadius: 5,
-                              offset: Offset(0, 2),
+                              offset: const Offset(0, 2),
                             ),
                           ],
                         ),
                         child: Text(
                           selectedOption!.text,
-                          style: TextStyle(fontSize: 20),
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
                     ),
                 ],
               ),
-              SizedBox(height: 14),
+              const SizedBox(height: 14),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  children: [
+                  children: const [
                     SizedBox(width: 4,),
                     Text(
                       'Add Your Status',
@@ -150,7 +150,7 @@ class _RefineScreenState extends State<RefineScreen> {
                   maxLines: 3,
                   maxLength: 250,
                   controller: textController,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
 
                     hintText: 'Type your status here',
                     border: InputBorder.none,
@@ -160,9 +160,9 @@ class _RefineScreenState extends State<RefineScreen> {
               ),
               const SizedBox(height: 16),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  children: [
+                  children: const [
                     SizedBox(width: 4,),
                     Text(
                       'Select Hyper Local Distance',
@@ -178,7 +178,7 @@ class _RefineScreenState extends State<RefineScreen> {
                 data: SliderTheme.of(context).copyWith(
 
                   trackHeight: 5, // Adjust the height of the slider track
-                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 6), // Adjust the size of the slider thumb
+                  thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6), // Adjust the size of the slider thumb
                 ),
 
                 child: Slider(
@@ -193,7 +193,7 @@ class _RefineScreenState extends State<RefineScreen> {
                   },
                   divisions: 100,
                   label: sliderValue.toString(),
-                  activeColor: Color(0xFF173148), // Set the active color of the slider
+                  activeColor: const Color(0xFF173148), // Set the active color of the slider
                   inactiveColor: Colors.grey, // Set the inactive color of the slider
                 ),
 
@@ -203,12 +203,12 @@ class _RefineScreenState extends State<RefineScreen> {
               Row(
 
                 children: [
-                  SizedBox(width: 22,),
-                  Text(
+                  const SizedBox(width: 22,),
+                  const Text(
                     "0 kM",
                     style: TextStyle(fontSize: 16),
                   ),
-                  SizedBox(width: 95,),
+                  const SizedBox(width: 95,),
                   Container(
 
                     width: 45,
@@ -224,24 +224,24 @@ class _RefineScreenState extends State<RefineScreen> {
                     child: Center(
                       child: Text(
                         sliderValue.round().toString(),
-                        style: TextStyle(fontSize: 16),
+                        style: const TextStyle(fontSize: 16),
                       ),
                     ),
                   ),
-                  SizedBox(width: 95,),
+                  const SizedBox(width: 95,),
 
 
-                  Text(
+                  const Text(
                     "100 KM",
                     style: TextStyle(fontSize: 16),
                   ),
                 ],
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               Row(
-                children: [
+                children: const [
                   SizedBox(width: 14,),
-                  const Text(
+                  Text(
                     'Select Purpose',
                     style: TextStyle(
                       fontSize: 15,
@@ -252,10 +252,10 @@ class _RefineScreenState extends State<RefineScreen> {
               ),
           Column(
             children: [
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 children: [
-                  SizedBox(width: 10,),
+                  const SizedBox(width: 10,),
                   PurposeContainer(
                     purpose: purposes[0],
                     isSelected: selectedPurpose == purposes[0],
@@ -265,7 +265,7 @@ class _RefineScreenState extends State<RefineScreen> {
                       });
                     },
                   ),
-                  SizedBox(width: 6,),
+                  const SizedBox(width: 6,),
                   PurposeContainer(
                     purpose: purposes[1],
                     isSelected: selectedPurpose == purposes[0],
@@ -275,7 +275,7 @@ class _RefineScreenState extends State<RefineScreen> {
                       });
                     },
                   ),
-                  SizedBox(width: 6,),
+                  const SizedBox(width: 6,),
 
                   PurposeContainer(
                     purpose: purposes[2],
@@ -286,7 +286,7 @@ class _RefineScreenState extends State<RefineScreen> {
                       });
                     },
                   ),
-                  SizedBox(width: 6,),
+                  const SizedBox(width: 6,),
                   PurposeContainer(
                     purpose: purposes[3],
                     isSelected: selectedPurpose == purposes[0],
@@ -299,10 +299,10 @@ class _RefineScreenState extends State<RefineScreen> {
 
                 ],
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               Row(
                 children: [
-                  SizedBox(width: 6,),
+                  const SizedBox(width: 6,),
 
                   PurposeContainer(
                     purpose: purposes[4],
@@ -312,7 +312,7 @@ class _RefineScreenState extends State<RefineScreen> {
                         selectedPurpose = purposes[0];
                       });
                     },
-                  ),SizedBox(width: 6,),
+                  ),const SizedBox(width: 6,),
                   PurposeContainer(
                     purpose: purposes[5],
                     isSelected: selectedPurpose == purposes[0],
@@ -321,7 +321,7 @@ class _RefineScreenState extends State<RefineScreen> {
                         selectedPurpose = purposes[0];
                       });
                     },
-                  ),SizedBox(width: 6,),
+                  ),const SizedBox(width: 6,),
                   PurposeContainer(
                     purpose: purposes[6],
                     isSelected: selectedPurpose == purposes[0],
@@ -330,7 +330,7 @@ class _RefineScreenState extends State<RefineScreen> {
                         selectedPurpose = purposes[0];
                       });
                     },
-                  ),SizedBox(width: 6,),
+                  ),const SizedBox(width: 6,),
                   PurposeContainer(
                     purpose: purposes[7],
                     isSelected: selectedPurpose == purposes[0],
@@ -349,7 +349,7 @@ class _RefineScreenState extends State<RefineScreen> {
 
             ],
           ),
-              Container(
+              SizedBox(
                   height: 115,
                   width: 350,
 
@@ -357,21 +357,16 @@ class _RefineScreenState extends State<RefineScreen> {
                       child: ElevatedButton(
                         onPressed: () {
 
-                          // Function to execute when the button is pressed
-                          // Add your code here
                         },
-
                         style: ElevatedButton.styleFrom(
-
                           shape: RoundedRectangleBorder(
-
-
                             borderRadius: BorderRadius.circular(25), // Match the border radius of the container
                           ),
-                          padding: EdgeInsets.only(right: 30,left: 30,top: 10,bottom: 10),
-                          backgroundColor: Color(0xFF1B3C59),
+                          padding: const EdgeInsets.only(right: 30,left: 30,top: 10,bottom: 10),
+                          backgroundColor: const Color(0xFF1B3C59),
+
                         ),
-                        child: Text("Save & Explore"),
+                        child: const Text("Save & Explore"),
                       ),
                   )
               )

@@ -31,7 +31,7 @@ class _ExploreScreenState extends State<ExploreScreen>
         children: [
           Container(
             height: 50,
-            color: Color(0xFF1B3C59),
+            color: const Color(0xFF1B3C59),
             child: TabBar(
               indicator: const BoxDecoration(
                 color: Color(0xFF1B3C59),
@@ -67,6 +67,16 @@ class _ExploreScreenState extends State<ExploreScreen>
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        // Button shadow
+        mini: false,
+        backgroundColor: const Color(0xFF173148),
+        onPressed: () {
+          // Add your onPressed logic here
+        },
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

@@ -46,32 +46,42 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      appBar: AppBar(
-        title: Column(
-          children: [
-            const Text('rishikesh devare'
-            ,style: TextStyle(fontSize: 10),),
-            Row(
-              children: [
-                Icon(Icons.location_on_outlined,
-                size: 8,),
-                Text('rishi',
-                style: TextStyle(
 
-                ),)
+    return Scaffold(
+
+      key: _scaffoldKey,
+
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF173148),
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Rishikesh Devare",
+              style: TextStyle(color: Colors.white, fontSize: 17.0),
+            ),
+            const SizedBox(height: 3),
+            Row(
+              children: const [
+                Icon(Icons.location_on_outlined, size: 13),
+                SizedBox(width: 2),
+                Text(
+                  "Nerul, Navi Mumbai",
+                  style: TextStyle(color: Colors.white, fontSize: 12.0),
+                ),
               ],
             )
-            ,
           ],
         ),
-        backgroundColor: const Color(0xFF173148),
         leading: IconButton(
-          icon: const Icon(Icons.menu),
+          icon: const Icon(Icons.menu_sharp, size: 30),
           onPressed: _openDrawer,
         ),
-
+        actions: const [
+          Icon(Icons.notification_important_outlined),
+          SizedBox(width: 15),
+        ],
       ),
       drawer: const AppDrawer(),
       body: AnimatedSwitcher(
@@ -112,6 +122,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           ),
         ),
       ),
+
     );
   }
 }
