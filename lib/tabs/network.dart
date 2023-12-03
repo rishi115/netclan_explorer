@@ -6,6 +6,7 @@ class NetworkScreen extends StatefulWidget {
 
   @override
   _NetworkScreenState createState() => _NetworkScreenState();
+  
 }
 
 class _NetworkScreenState extends State<NetworkScreen> {
